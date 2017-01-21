@@ -17,9 +17,10 @@ public class TraceMethodArgsAndReturn{
 		location=@Location(Kind.RETURN)
 	)
 
-	public static void traceExecute(int sleepTime,@Return boolean result,@ProbeMethodName String methodName){
+	public static void traceExecute(int sleepTime,@Return boolean result,@ProbeMethodName String methodName,@Self Object instance){
 			println("call CaseObject.execute");
 			println(strcat("sleepTime is:",str(sleepTime)));
 			println(strcat("return value is:",str(result)));
+			println(strcat("sleepTotalTime is:",str(get(field("CaseObject","sleepTotalTime"),instance))));
 		}
 	}
